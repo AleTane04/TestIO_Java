@@ -5,7 +5,7 @@ import java.io.*;
 public class Main {
     public static void main(String[] args) throws IOException
     {
-        System.out.println("CWD corrente: " + System.getProperty("user.dir"));
+        System.out.println("Directory corrente: " + System.getProperty("user.dir"));
         System.out.println("Enter a character:");
 
         // Reads a single byte from System.in
