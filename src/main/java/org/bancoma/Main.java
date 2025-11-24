@@ -35,5 +35,23 @@ public class Main
             if(destImg != null)
                 destImg.close();
         }
+        /* Stream di caratteri */
+        FileReader sourceStream = null;
+
+        try
+        {
+            sourceStream = new FileReader("input.txt");
+
+
+            int temp;
+
+            while (( temp = sourceStream.read())!= -1 )
+                System.out.println((char)temp);
+        }
+        finally
+        {
+            if (sourceStream != null)
+                sourceStream.close();
+        }
     }
 }
