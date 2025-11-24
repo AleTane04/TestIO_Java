@@ -2,11 +2,14 @@ package org.bancoma;
 
 import java.io.*;
 
+import java.io.IOException;
+import java.util.Scanner;
+
 public class Main
 {
     public static void main(String[] args) throws IOException
     {
-        /* Stream di Byte */
+       /* Stream di Byte */ /*
         int data;
         System.out.println("Inserisci un carattere: ");
         data = System.in.read();
@@ -35,7 +38,7 @@ public class Main
             if(destImg != null)
                 destImg.close();
         }
-        /* Stream di caratteri */
+      */  /* Stream di caratteri */ /*
         FileReader sourceStream = null;
 
         try
@@ -52,6 +55,27 @@ public class Main
         {
             if (sourceStream != null)
                 sourceStream.close();
+        }
+        */
+        try
+        {
+            File myNewFile = new File("new_file.txt");
+            myNewFile.createNewFile();
+
+            FileWriter myWriter = new FileWriter(myNewFile);
+            myWriter.write("Hello World\nCome va?\nCiao Andrea come va la vita a Milano?\nVideoprova HTC 10");
+            myWriter.close();
+
+            Scanner Reader = new Scanner(myNewFile);
+            while(Reader.hasNextLine())
+            {
+                System.out.println(Reader.nextLine());
+            }
+        }
+        catch (IOException e)
+        {
+            System.out.println("An error has occurred.");
+            e.printStackTrace();
         }
     }
 }
